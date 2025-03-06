@@ -1,0 +1,680 @@
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #F5F5F5; /* Abu-abu muda */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1, h2, h3, h4 {
+  color: #2C3E50; /* Biru tua */
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive Font Sizes */
+h2 {
+  font-size: 2.5rem; /* Default size for desktop */
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem !important; /* Reduced size for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  h2 {
+    font-size: 1.5rem !important; /* Further reduced size for mobile */
+  }
+}
+
+/* Header Section */
+.header {
+  background: linear-gradient(135deg, #2C3E50, #1A252F); /* Gradien biru tua */
+  color: white; /* Teks putih pada latar gelap */
+  text-align: center;
+  padding: 40px 20px; /* Adjusted padding */
+}
+
+.header .logo {
+  width: 120px; /* Ukuran logo proporsional */
+  margin-bottom: 20px;
+}
+
+.header h1.highlight {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white; /* Teks putih pada latar gelap */
+}
+
+.header p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #D3D3D3; /* Abu-abu terang untuk kontras */
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap; /* Responsive CTA buttons */
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #FF5722; /* Oranye merah */
+  color: white; /* Teks putih pada tombol */
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+  background: white;
+  color: #FF5722;
+  border: 2px solid #FF5722;
+}
+
+/* Promo Timer Section */
+.promo-timer {
+  background: #1A252F; /* Biru tua pekat */
+  color: white; /* Teks putih pada latar gelap */
+  text-align: center;
+  padding: 50px 20px;
+  margin-bottom: 40px; /* Add margin-bottom */
+}
+
+.promo-timer h2 {
+  color: white; /* Ubah warna teks menjadi putih */
+}
+
+#countdown {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #FFEB3B; /* Kuning terang untuk kontras */
+}
+
+.promo-timer .btn-primary {
+  margin-top: 20px; /* Posisi tombol di bawah timer */
+  display: inline-block;
+}
+
+/* Video Demo Section */
+.video-demo {
+  background: white;
+  padding: 50px 20px;
+  text-align: center;
+  margin-bottom: 40px; /* Add margin-bottom */
+}
+
+.video-demo h2.gradient-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #FF5722, #FF9800); /* Gradien oranye merah */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.video-demo h2.gradient-text::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #FF5722, #FF9800); /* Gradien oranye merah */
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Lebar maksimal video */
+  margin: 0 auto; /* Pusatkan video */
+  aspect-ratio: 16 / 9; /* Rasio aspek 16:9 untuk video */
+}
+
+.video-container iframe {
+  width: 100%; /* Mengisi lebar container */
+  height: 100%; /* Mengikuti rasio aspek */
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ Section */
+.faq {
+  background: #F5F5F5;
+  padding: 50px 20px;
+  text-align: center;
+  margin-bottom: 40px; /* Add margin-bottom */
+}
+
+.faq h2.gradient-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #FF5722, #FF9800); /* Gradien oranye merah */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-block;
+}
+
+.faq h2.gradient-text::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #FF5722, #FF9800); /* Gradien oranye merah */
+}
+
+.faq-item {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.faq-question {
+  background: #2C3E50;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+faq-question:hover {
+  background: #1A252F;
+  transform: scale(1.02);
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  content: '-';
+  transform: rotate(0deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+  margin-top: 10px;
+  background: #F5F5F5;
+  border-radius: 5px;
+}
+
+.faq-answer p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 200px; /* Adjust based on content */
+  padding: 15px;
+}
+
+/* Section: License & User Type */
+.license-user-type {
+  padding: 50px 20px;
+  text-align: center;
+  background: white; /* Latar putih */
+  color: #2C3E50; /* Teks biru tua */
+  margin-bottom: 40px; /* Add margin-bottom */
+}
+
+.gradient-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #FF5722, #FF9800); /* Gradien oranye merah */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 30px;
+}
+
+.license-section, .user-section {
+  margin-bottom: 50px; /* Margin antara Tipe Lisensi dan Tipe Pengguna */
+}
+
+.license-section h3, .user-section h3 {
+  margin-bottom: 20px; /* Margin untuk judul Tipe Lisensi dan Tipe Pengguna */
+  color: #2C3E50; /* Biru tua */
+}
+
+.license-types, .user-types {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  flex-wrap: wrap; /* Responsive layout */
+  gap: 1rem;
+}
+
+.license-item, .user-item {
+  background: #F5F5F5; /* Abu-abu muda */
+  padding: 20px;
+  border-radius: 5px;
+  width: 30%;
+  min-width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: #2C3E50; /* Teks biru tua */
+}
+
+@media (max-width: 768px) {
+  .license-item, .user-item {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+.license-item:hover, .user-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Separator Line */
+.separator-line {
+  width: 80%; /* Lebar garis */
+  height: 2px; /* Ketebalan garis */
+  background: linear-gradient(90deg, #FF5722, #FF9800); /* Gradien oranye merah */
+  margin: 50px auto; /* Garis di tengah-tengah */
+}
+
+/* Footer */
+.footer {
+  background: #1A252F; /* Biru tua pekat */
+  color: white; /* Teks putih pada latar gelap */
+  text-align: center; /* Center the text horizontally */
+  padding: 20px 0; /* Adjusted padding */
+  margin: 0; /* Remove margin */
+}
+
+.footer .container {
+  display: block; /* Revert to block display */
+  text-align: center; /* Center the text horizontally */
+}
+
+.footer p {
+  margin-bottom: 0; /* Remove margin-bottom */
+}
+
+.social-links {
+  margin-top: 1rem;
+}
+
+.social-icon {
+  width: 30px; /* Ukuran ikon media sosial */
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+social-icon:hover {
+  transform: scale(1.2); /* Efek hover pada ikon */
+}
+
+/* Floating WhatsApp Icon */
+.whatsapp-float {
+  position: fixed; /* Makes the icon stay in a fixed position */
+  bottom: 20px; /* Distance from the bottom of the screen */
+  right: 20px; /* Distance from the right of the screen */
+  background: #25D366; /* WhatsApp green color */
+  width: 50px; /* Width of the icon container */
+  height: 50px; /* Height of the icon container */
+  border-radius: 50%; /* Makes the container circular */
+  display: flex; /* Centers the icon inside the container */
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+  text-decoration: none; /* Removes underline from the link */
+  transition: all 0.3s ease; /* Smooth hover effect */
+  z-index: 1000; /* Ensures the icon stays above other elements */
+}
+
+.whatsapp-icon {
+  width: 30px; /* Size of the WhatsApp icon */
+  height: 30px; /* Size of the WhatsApp icon */
+}
+
+.whatsapp-float:hover {
+  background: #128C7E; /* Darker green on hover */
+  transform: scale(1.1); /* Slightly enlarges the icon on hover */
+}
+
+.discount-badge {
+  background: #FF5722;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-align: center;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.btn-primary {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Navigation Menu */
+.nav-menu {
+  background: #2C3E50; /* Biru tua */
+  color: white;
+  padding: 10px 0;
+  margin-bottom: 0; /* Remove margin-bottom */
+}
+
+.nav-menu .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-menu ul li {
+  display: inline;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+  color: #FF5722; /* Oranye merah */
+}
+
+/* Responsive Navigation Menu */
+.nav-menu .menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.nav-menu .menu-toggle span {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav-menu .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+  }
+
+  .nav-menu ul li {
+    width: 100%;
+  }
+
+  .nav-menu ul li a {
+    display: block;
+    padding: 10px;
+  }
+
+  .nav-menu .menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu.active ul {
+    display: flex;
+  }
+}
+
+/* Content Section */
+.content {
+  margin: 20px 0;
+}
+
+/* Functionality Matrix Section */
+.functionality-matrix {
+  padding: 50px 20px;
+  background: #F5F5F5;
+  text-align: center;
+  margin-bottom: 40px; /* Add margin-bottom */
+}
+
+.matrix-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.matrix-table th, .matrix-table td {
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.matrix-table th {
+  background: #2C3E50;
+  color: white;
+  font-weight: bold;
+}
+
+.matrix-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.matrix-table tr:hover {
+  background: #f1f1f1;
+}
+
+.matrix-table td {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Table Styles for "Cara Beli Lisensi" Page */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.breadcrumbs {
+  margin: 20px 0;
+}
+
+/* Hero Section */
+.hero {
+  background: url('https://example.com/hero-image.jpg') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5rem;
+  margin-bottom: 40px;
+}
+
+.hero .btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+}
+
+/* Testimonial Section */
+.testimonials {
+  background: #f9f9f9;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.testimonial-item {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.testimonial-item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.testimonial-item .author {
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333;
+}
+
+/* Call to Action Section */
+.cta {
+  background: linear-gradient(135deg, #FF5722, #FF9800);
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.cta .btn {
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  background: white;
+  color: #FF5722;
+  border: 2px solid white;
+}
+
+.cta .btn:hover {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
